@@ -1,7 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase simCalculadora, sera la encargada de interactuar con el usuario.
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
  */
 package main;
 
@@ -15,7 +18,8 @@ import java.io.FileWriter;
  *
  * @author Sebastián
  */
-public class simCalculadora {
+public class simCalculadora
+{
 
     /**
      * @param args the command line arguments
@@ -23,6 +27,10 @@ public class simCalculadora {
     File archivo;
     FileWriter fw;
     static Scanner sw;
+    
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         boolean buclePrincipal = true;
         String ruta = "";
@@ -118,6 +126,7 @@ public class simCalculadora {
                         break;
                 }
                 buclePrincipal = false;
+                lectura.close();
             } catch (Exception e) {
                 //TODO: handle exception
                 System.out.println("\nNo se pudo leer el documento. Por favor, asegurese que la ruta sea la correcta.");
@@ -128,6 +137,11 @@ public class simCalculadora {
 
     }
 
+    /** 
+     * @param pregunta
+     * @param opciones
+     * @return int
+     */
     public static int pregunta(String pregunta, int opciones)
     {
         boolean bucle = true;
@@ -149,5 +163,4 @@ public class simCalculadora {
         }
         return respuesta;
     } 
-
 }

@@ -1,5 +1,10 @@
 /**
- * 
+ * Clase IList, sera la interfaz para los metodos que debe tener cada lista
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
  */
 package structures;
 

@@ -1,7 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase InfixToPosfix, sera la encargada de la "traduccion" de las expresiones infix a posfix
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
  */
 package main;
 
@@ -11,7 +14,8 @@ import structures.StackUsingArrayList;
  *
  * @author Sebastián
  */
-public class InfixToPostfix {
+public class InfixToPostfix
+{
 
     /**
      *
@@ -59,6 +63,10 @@ public class InfixToPostfix {
         return temp;
     }
 
+    /** 
+     * @param c
+     * @return int
+     */
     public static int prioridad(char c) {
         if (c == '^') {
             return 3;
@@ -71,11 +79,13 @@ public class InfixToPostfix {
         }
     }
 
-    private static class ExceptionInfixToPosfix extends Exception {
+    private static class ExceptionInfixToPosfix extends Exception
+    {
 
         public static final long serialVersionUID = 700L;
 
-        public ExceptionInfixToPosfix(String mensaje) {
+        public ExceptionInfixToPosfix(String mensaje)
+        {
             super(mensaje);
         }
     }

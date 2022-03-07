@@ -1,3 +1,11 @@
+/**
+ * Clase StackUsingArray, la cual sera la que implementara las funciones del tipo de Stack
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
+ */
 package structures;
 
 
@@ -9,7 +17,10 @@ public class StackUsingArray<T> implements IStack<T>
     {
         miListaInterna = (T[]) new Object[largo];
     }
-
+    
+    /** 
+     * @return int
+     */
     @Override
     public int count() {
         int contador = 0;
@@ -19,7 +30,10 @@ public class StackUsingArray<T> implements IStack<T>
         }
         return contador;
     }
-
+    
+    /** 
+     * @return boolean
+     */
     @Override
     public boolean isEmpty() {
 		if(miListaInterna == null) {
@@ -27,7 +41,10 @@ public class StackUsingArray<T> implements IStack<T>
 		}
 		else return false;
     }
-
+    
+    /** 
+     * @param value
+     */
     @Override
     public void push(T value) {
         if(!isEmpty())
@@ -37,7 +54,10 @@ public class StackUsingArray<T> implements IStack<T>
         }
         this.miListaInterna[0] = value;
     }
-
+    
+    /** 
+     * @return T
+     */
     @Override
     public T pull() {
         T temp = this.miListaInterna[0];
@@ -46,6 +66,9 @@ public class StackUsingArray<T> implements IStack<T>
         return temp;
     }
 
+    /** 
+     * @return T
+     */
     @Override
     public T peek() {
         return miListaInterna[0];
@@ -58,5 +81,4 @@ public class StackUsingArray<T> implements IStack<T>
         this.miListaInterna = temp;
 
     }
-    
 }

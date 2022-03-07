@@ -1,5 +1,10 @@
 /**
- * 
+ * Clase SingleLinedList, la cual sera con la que se instanciara objetos en las otras clases
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
  */
 package structures;
 
@@ -14,7 +19,10 @@ public class SingleLinkedList<T> implements IList<T> {
     private Node<T> start;
     private Node<T> end;
 
-	@Override
+    /** 
+     * @param value
+     */
+    @Override
 	public void InsertAtStart(T value) {
 		Node<T> newNode = new Node<T>(value);
 
@@ -30,8 +38,11 @@ public class SingleLinkedList<T> implements IList<T> {
         }
         count++;
 	}
-
-	@Override
+	
+    /** 
+     * @param value
+     */
+    @Override
 	public void InsertAtEnd(T value) {
 		Node<T> newNode = new Node<T>(value);
 
@@ -48,8 +59,12 @@ public class SingleLinkedList<T> implements IList<T> {
         count++;
 		
 	}
-
-	@Override
+	
+    /** 
+     * @param value
+     * @param index
+     */
+    @Override
 	public void Insert(T value, int index){
 		
 		if (IsEmpty()) //if the list is empty then insert at start
@@ -87,8 +102,12 @@ public class SingleLinkedList<T> implements IList<T> {
             }
         }
 	}
-
-	@Override
+	
+    /** 
+     * @param index
+     * @return T
+     */
+    @Override
 	public T Delete(int index) {
 		
 		if (index == 0)
@@ -123,8 +142,11 @@ public class SingleLinkedList<T> implements IList<T> {
             return null;
         }
 	}
-
-	@Override
+	
+    /** 
+     * @return T
+     */
+    @Override
 	public T DeleteAtStart() {
 		
 		if (!IsEmpty()) 
@@ -137,8 +159,11 @@ public class SingleLinkedList<T> implements IList<T> {
 
         return null;
 	}
-
-	@Override
+	
+    /** 
+     * @return T
+     */
+    @Override
 	public T DeleteAtEnd() {
 		if (!IsEmpty()) 
         {
@@ -174,8 +199,12 @@ public class SingleLinkedList<T> implements IList<T> {
 
         return null;
 	}
-
-	@Override
+	
+    /** 
+     * @param index
+     * @return T
+     */
+    @Override
 	public T Get(int index) {
 		
 	    if (!IsEmpty())
@@ -215,13 +244,19 @@ public class SingleLinkedList<T> implements IList<T> {
 
         return null;
 	}
-
-	@Override
+	
+    /** 
+     * @return boolean
+     */
+    @Override
 	public boolean IsEmpty() {
 		return count == 0;
 	}
-
-	@Override
+	
+    /** 
+     * @return int
+     */
+    @Override
 	public int Count() {
 		// TODO Auto-generated method stub
 		return count;

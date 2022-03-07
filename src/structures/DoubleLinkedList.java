@@ -1,7 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase DoubleLinkedList, la cual sera con la que se instanciara objetos en las otras clases
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
  */
 package structures;
 
@@ -21,6 +24,9 @@ public class DoubleLinkedList<T> implements IList<T> {
 		count = 0;
 	}
 	
+	/** 
+	 * @param value
+	 */
 	@Override
 	public void InsertAtStart(T value) {
 		DoubleNode<T> newNode = new DoubleNode<T>(value);
@@ -42,7 +48,10 @@ public class DoubleLinkedList<T> implements IList<T> {
 		
 		count++;
 	}
-
+	
+	/** 
+	 * @param value
+	 */
 	@Override
 	public void InsertAtEnd(T value) {
 		
@@ -66,7 +75,11 @@ public class DoubleLinkedList<T> implements IList<T> {
 		count++;
 		
 	}
-
+	
+	/** 
+	 * @param value
+	 * @param index
+	 */
 	@Override
 	public void Insert(T value, int index) {
 		
@@ -107,12 +120,19 @@ public class DoubleLinkedList<T> implements IList<T> {
 		
 	}
 
+	/** 
+	 * @param index
+	 * @return T
+	 */
 	@Override
 	public T Delete(int index) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	/** 
+	 * @return T
+	 */
 	@Override
 	public T DeleteAtStart() {
 		if (!IsEmpty()) {
@@ -138,13 +158,20 @@ public class DoubleLinkedList<T> implements IList<T> {
 		
 		
 	}
-
+	
+	/** 
+	 * @return T
+	 */
 	@Override
 	public T DeleteAtEnd() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	/** 
+	 * @param index
+	 * @return T
+	 */
 	@Override
 	public T Get(int index) {
 	    if (!IsEmpty())
@@ -185,12 +212,18 @@ public class DoubleLinkedList<T> implements IList<T> {
         return null;
 
 	}
-
+	
+	/** 
+	 * @return boolean
+	 */
 	@Override
 	public boolean IsEmpty() {
 		return count == 0;
 	}
-
+	
+	/** 
+	 * @return int
+	 */
 	@Override
 	public int Count() {
 		return count;

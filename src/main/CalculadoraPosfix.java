@@ -1,7 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase CalculadoraPosfix, sera la encargada de realizar las operaciones con las expresiones posfix
+ * Autores:
+ * 		Herber Sebastian Silva Muñoz 	21764
+ * 		Daniel Esteban Morales Urizar 	21785
+ * 		Elias Alberto Alvarado Raxon 	21808
+ * Fecha de creacion: 06/03/2022
  */
 package main;
 
@@ -18,6 +21,9 @@ public class CalculadoraPosfix {
         System.out.println("Se creara una unica calculadora");
     } 
     
+    /** 
+     * @return CalculadoraPosfix
+     */
     public static CalculadoraPosfix getInstance(){
         if(calc == null){
             calc = new CalculadoraPosfix();
@@ -26,6 +32,12 @@ public class CalculadoraPosfix {
         }
         return calc;
     }
+    
+    /** 
+     * @param expresion
+     * @param tipo
+     * @return int
+     */
     public int Evaluar(String expresion, int tipo){
         IStack<Integer> lista= Stack.construir(tipo);
         int resultado = 0;
