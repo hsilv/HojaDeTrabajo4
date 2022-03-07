@@ -47,10 +47,10 @@ public class simCalculadora {
             System.out.print(lista);
             sw.close();
             String menu= "1. ArrayList\n2. Vector\n3. Lista ";
-            
+            System.out.println("¿Qué tipo de stack desa utilizar?\n"+menu);
+            int respuesta = sc.nextInt();
             for(int i = 0; i<lista.size();i++){
-                System.out.println("¿Qué tipo de stack desa utilizar para la línea "+(i+1)+"?\n"+menu);
-                int respuesta = sc.nextInt();
+                
                 String cadena = convInfixToPosfix(lista.get(i));
                 if(respuesta == 1){
                     //trabajar con arraylist

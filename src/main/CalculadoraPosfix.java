@@ -5,6 +5,7 @@
  */
 package main;
 
+import javafx.beans.binding.DoubleExpression;
 import structures.IStack;
 import structures.Stack;
 
@@ -34,7 +35,7 @@ public class CalculadoraPosfix {
         String[] caracteres = expresion.split("");
         
         for (String caracter: caracteres){
-            if(caracter.equals("+") || caracter.equals("-") || caracter.equals("*") || caracter.equals("/")){
+            if(caracter.equals("+") || caracter.equals("-") || caracter.equals("*") || caracter.equals("/") || caracter.equals("^")){
                 if(lista.count() <=1){
                     throw new IllegalArgumentException("\nNo se puede realizar la operacion a falta de operadores.");
                 }else{
@@ -56,6 +57,11 @@ public class CalculadoraPosfix {
                             }else{
                                 resultado = op2/op1;
                             }
+                            break;
+                        case "^":
+                            double a = new Double(op2);
+                            double b = new Double(op1);
+                            resultado = (int) Math.pow(a, b);
                             break;
                     }
                     lista.push(resultado);
