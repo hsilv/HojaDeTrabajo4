@@ -5,7 +5,6 @@
  */
 package main;
 
-import javafx.beans.binding.DoubleExpression;
 import structures.IStack;
 import structures.Stack;
 
