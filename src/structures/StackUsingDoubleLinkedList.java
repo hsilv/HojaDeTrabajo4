@@ -10,7 +10,7 @@ package structures;
  */
 public class StackUsingDoubleLinkedList<T> implements IStack<T> {
 
-        private DoubleLinkedList<T> listaInterna;
+    private DoubleLinkedList<T> listaInterna;
 	
 	public StackUsingDoubleLinkedList() {
 		listaInterna = new DoubleLinkedList<T>();
