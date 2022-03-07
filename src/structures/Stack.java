@@ -6,8 +6,7 @@ public class Stack<T> {
             case 1:
                 return new StackUsingArrayList<>();                
             case 2:
-                //aqui va vector (Array)
-                //return new StackUsingArrayList(); 
+                return new StackUsingArrayList<>(); 
             case 3:
                 return new StackUsingLinkedList<>(); 
             case 4:
