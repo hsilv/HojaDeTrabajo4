@@ -40,6 +40,9 @@ public class InfixToPostfix {
                     if(prioridad(c) <= prioridad(stack.peek())){
                         temp = temp+stack.pull();
                     }
+                    else if(prioridad(c) >= prioridad(stack.peek())){
+                        temp = temp+stack.pull();
+                    }
                 }
                 stack.push(c);
             }
