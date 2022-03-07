@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class StackUsingArray<T> implements IStack<T>
 {
-    private Object[] miListaInterna;
+    private T miListaInterna[];
 
     public StackUsingArray(int largo)
     {
-        miListaInterna = new Object [largo];
+        miListaInterna = (T[]) new Object[largo];
     }
 
     @Override
@@ -31,20 +31,25 @@ public class StackUsingArray<T> implements IStack<T>
 
     @Override
     public void push(Object value) {
-        
+        T temp[] = (T[]) new Object[miListaInterna.length + 5];
+
+        System.arraycopy(miListaInterna, 0, temp, 0, miListaInterna.length);
+        this.miListaInterna = temp;
         
     }
 
     @Override
-    public Object pull() {
-        // TODO Auto-generated method stub
-        return null;
+    public T pull() {
+        T temp[] = (T[]) new Object[miListaInterna.length];
+
+        System.arraycopy(miListaInterna, 1, temp, 0, miListaInterna.length - 1);
+        this.miListaInterna = temp;
+        return temp[0];
     }
 
     @Override
-    public Object peek() {
-        // TODO Auto-generated method stub
-        return null;
+    public T peek() {
+        return miListaInterna[0];
     }
     
 }
