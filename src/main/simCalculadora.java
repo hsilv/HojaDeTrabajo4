@@ -40,14 +40,17 @@ public class simCalculadora {
                 System.out.println("Verifique que el archivo exista, se encuentre en la misma carpeta y se llame 'datos.txt'");
             }else{
                 sw = new Scanner(archivo);
-			    while (sw.hasNextLine()) 
-				    lista.add(sw.nextLine());
+			    while (sw.hasNextLine()){
+                    lista.add(sw.nextLine());
+                }				    
             }  
+            System.out.print(lista);
             sw.close();
             String menu= "1. ArrayList\n2. Vector\n3. Lista ";
-            System.out.println("¿Qué tipo de stack desa utilizar?\n"+menu);
-            int respuesta = sc.nextInt();
+            
             for(int i = 0; i<lista.size();i++){
+                System.out.println("¿Qué tipo de stack desa utilizar para la línea "+(i+1)+"?\n"+menu);
+                int respuesta = sc.nextInt();
                 String cadena = convInfixToPosfix(lista.get(i));
                 if(respuesta == 1){
                     //trabajar con arraylist
@@ -71,9 +74,7 @@ public class simCalculadora {
                 }else{
                     System.out.println("Opción no válida");
                 }
-                
             }        
-             
         } catch (Exception e) {
             System.out.println(e);
         }
