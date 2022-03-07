@@ -29,26 +29,34 @@ public class StackUsingArray<T> implements IStack<T>
     }
 
     @Override
-    public void push(Object value) {
-        T temp[] = (T[]) new Object[miListaInterna.length + 5];
-
-        System.arraycopy(miListaInterna, 0, temp, 0, miListaInterna.length);
-        this.miListaInterna = temp;
-        
+    public void push(T value) {
+        if(!isEmpty())
+        {
+            if(count() - 1 == miListaInterna.length - 1) extender();
+            System.arraycopy(this.miListaInterna, 0, this.miListaInterna, 1, miListaInterna.length - 1);
+        }
+        this.miListaInterna[0] = value;
     }
 
     @Override
     public T pull() {
-        T temp[] = (T[]) new Object[miListaInterna.length];
-
-        System.arraycopy(miListaInterna, 1, temp, 0, miListaInterna.length - 1);
-        this.miListaInterna = temp;
-        return temp[0];
+        T temp = this.miListaInterna[0];
+        if(count() == miListaInterna.length - 1) extender();
+        System.arraycopy(miListaInterna, 1, miListaInterna, 0, miListaInterna.length - 1);
+        return temp;
     }
 
     @Override
     public T peek() {
         return miListaInterna[0];
+    }
+
+    private void extender()
+    {
+        T temp[] = (T[]) new Object[miListaInterna.length + 5];   
+        System.arraycopy(miListaInterna, 0, temp, 0, miListaInterna.length);
+        this.miListaInterna = temp;
+
     }
     
 }
